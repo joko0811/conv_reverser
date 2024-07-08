@@ -78,7 +78,7 @@ def net_reverse(conv_params, coordinate, max_feature_size):
     next_coordinates = scale_xyxy(next_coordinates, next_max_feature_size)
 
     for cp_i in range(1, len(rev_conv_params)):
-        print(f"{cp_i}番目の逆畳み込み-" + str_params(rev_conv_params[cp_i]))
+        # print(f"{cp_i}番目の逆畳み込み-" + str_params(rev_conv_params[cp_i]))
         next_max_feature_size = calc_max_feature_size_for_conv_reverse(
             rev_conv_params[cp_i], next_max_feature_size
         )
@@ -88,7 +88,7 @@ def net_reverse(conv_params, coordinate, max_feature_size):
         next_coordinates = xyxy1[:2] + xyxy2[2:]
         next_coordinates = scale_xyxy(next_coordinates, next_max_feature_size)
         # print("最大" + str_xyxy(next_max_feature_size))
-        print(str_xyxy(next_coordinates))
+        # print(str_xyxy(next_coordinates))
 
     return next_coordinates
 
