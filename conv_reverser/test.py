@@ -6,7 +6,5 @@ if __name__ == "__main__":
         s3fd_reverse.s3fd_feature_num_converter(feature_idx)
     )
     print((feat_x, feat_y))
-    xyxy = s3fd_reverse.s3fd_reverse(
-        target_layer, (feat_x, feat_y), [0, 0] + max_feature_size
-    )
+    xyxy = s3fd_reverse.s3fd_reverse(target_layer, (feat_x, feat_y), max_feature_size)
     print(xyxy)

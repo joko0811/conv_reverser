@@ -39,7 +39,7 @@ def s3fd_feature_num_converter(feature_num):
             f"feature_num must be less than {s3fd_magical_feature_numbers[-1]}, but got {feature_num}."
         )
     max_feature_size = s3fd_magical_feature_list[target_layer_num]
-    max_feature_size = [max_feature_size[1], max_feature_size[0]]
+    max_feature_size = [0, 0, max_feature_size[1], max_feature_size[0]]
     return target_layer_num, (x, y), max_feature_size
 
 
