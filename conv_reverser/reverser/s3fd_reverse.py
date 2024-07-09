@@ -20,7 +20,7 @@ def s3fd_feature_num_converter(feature_num, feat_sizes):
     offset = -1
     x, y = -1, -1
     for i in range(len(s3fd_magical_feature_list)):
-        if feature_num < total + s3fd_magical_feature_numbers[i]:
+        if feature_num <= total + s3fd_magical_feature_numbers[i]:
             target_layer_num = i
             offset = feature_num - total
             x = int(offset % s3fd_magical_feature_list[i][1])
