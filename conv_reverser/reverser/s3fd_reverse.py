@@ -29,7 +29,7 @@ def s3fd_feature_num_converter(feature_num, feat_sizes):
         total += s3fd_magical_feature_numbers[i] - 1
     if offset == -1 or y == -1 or x == -1:
         raise ValueError(
-            f"feature_num must be less than {s3fd_magical_feature_numbers[-1]}, but got {feature_num}."
+            f"feature_num must be less than {total}, but got {feature_num}."
         )
     max_feature_size = s3fd_magical_feature_list[target_layer_num]
     max_feature_size = [0, 0, max_feature_size[1], max_feature_size[0]]
