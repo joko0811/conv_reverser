@@ -16,17 +16,17 @@ def s3fd_feature_num_converter(feature_num, feat_sizes):
         for i in range(len(s3fd_magical_feature_list))
     ]
 
-    total = 0
+    total = -1
     offset = -1
     x, y = -1, -1
     for i in range(len(s3fd_magical_feature_list)):
-        if feature_num < total + s3fd_magical_feature_numbers[i] - 1:
+        if feature_num < total + s3fd_magical_feature_numbers[i]:
             target_layer_num = i
             offset = feature_num - total
             x = int(offset % s3fd_magical_feature_list[i][1])
             y = math.floor(offset / s3fd_magical_feature_list[i][1])
             break
-        total += s3fd_magical_feature_numbers[i] - 1
+        total += s3fd_magical_feature_numbers[i]
     if offset == -1 or y == -1 or x == -1:
         raise ValueError(
             f"feature_num must be less than {total}, but got {feature_num}."
