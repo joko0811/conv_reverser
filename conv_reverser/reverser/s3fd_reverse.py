@@ -3,21 +3,14 @@ from .conv_reverse import generate_params, net_reverse
 from .vgg_reverse import generate_vgg_params
 
 
-def s3fd_feature_num_converter(feature_num):
+def s3fd_feature_num_converter(feature_num, feat_sizes):
     """
     Args:
         feature_num: int
     Returns:
         target_layer_num, coordinate: int, list
     """
-    s3fd_magical_feature_list = [
-        [267, 476],
-        [134, 238],
-        [67, 119],
-        [33, 59],
-        [17, 30],
-        [9, 15],
-    ]
+    s3fd_magical_feature_list = feat_sizes
     s3fd_magical_feature_numbers = [
         s3fd_magical_feature_list[i][0] * s3fd_magical_feature_list[i][1]
         for i in range(len(s3fd_magical_feature_list))
